@@ -2,13 +2,20 @@
 import Icon from "./Icon.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 import type { iconPaths } from "./IconPaths";
-import LenguageToggle from "./LenguageToggle.astro";
+import { LanguageSelector } from "astro-i18next/components";
+import i18next, { t } from "i18next";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Work", href: "/work/" },
-  { label: "About", href: "/about/" },
+  { label: t("NAV.HOME"), href: i18next.language === "es" ? `/es` : `/` },
+  {
+    label: t("NAV.ABOUT"),
+    href: i18next.language === "es" ? `/es/about` : `/about`,
+  },
+  {
+    label: t("NAV.CONTACT"),
+    href: i18next.language === "es" ? `/es/contact` : `/contact`,
+  }
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -33,18 +40,22 @@ const iconLinks: {
     icon: "twitter-logo",
   },
 ];
+
 ---
 
 <nav>
   <div class="menu-header">
-    <a href="/" class="site-title">
+    <a href=`${i18next.language === "es" ? "/es" : "/"}` class="site-title align-middle	">
       <Icon
         icon="terminal-window"
         color="var(--accent-regular)"
         size="1.6em"
         gradient
       />
-       Rodrigo Juarez
+      <p class="flex ">
+
+        Rodrigo Juarez
+      </p>
     </a>
     <menu-button>
       <template>
@@ -67,7 +78,8 @@ const iconLinks: {
                 {
                   active:
                     Astro.url.pathname === href ||
-                    (href !== "/" && Astro.url.pathname.startsWith(href)),
+                    (href !== (i18next.language === "es" ? "/es" : "/") &&
+                      Astro.url.pathname.startsWith(href)),
                 },
               ]}
               href={href}
@@ -84,7 +96,7 @@ const iconLinks: {
       <div class="socials">
         {
           iconLinks.map(({ href, icon, label }) => (
-            <a href={href} class="social">
+            <a href={href} target="_blank" class="social">
               <span class="sr-only">{label}</span>
               <Icon icon={icon} />
             </a>
@@ -105,7 +117,8 @@ const iconLinks: {
                 {
                   active:
                     Astro.url.pathname === href ||
-                    (href !== "/" && Astro.url.pathname.startsWith(href)),
+                    (href !== (i18next.language === "es" ? "/es" : "/") &&
+                      Astro.url.pathname.startsWith(href)),
                 },
               ]}
               href={href}
@@ -120,7 +133,7 @@ const iconLinks: {
       <div class="socials">
         {
           iconLinks.map(({ href, icon, label }) => (
-            <a href={href} class="social">
+            <a href={href} target="_blank" class="social">
               <span class="sr-only">{label}</span>
               <Icon icon={icon} />
             </a>
@@ -128,9 +141,13 @@ const iconLinks: {
         }
       </div>
 
-      <div class="theme-toggle">
-        <LenguageToggle />
+      <div id="lenguageSelector">
+        <LanguageSelector
+          showFlag={true}
+          class="w-auto p-2 rounded-full focus:outline-none"
+        />
       </div>
+
       <div class="theme-toggle">
         <ThemeToggle />
       </div>
