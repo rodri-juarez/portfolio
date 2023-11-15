@@ -1,0 +1,39 @@
+{
+  "CONTACT": {
+    "CALL": "¿Interesado en trabajar juntos?",
+    "DOWNLOAD": "Descarga mi CV",
+    "MESSAGE": "Envíeme un mensage"
+  },
+  "NAV": {
+    "ABOUT": "Sobre mi",
+    "HOME": "Inicio",
+    "CONTACT": "Contacto"
+  },
+  "SKILLS": {
+    "FULLSTACK": {
+      "DESCRIPTION": "Disfruto dando vida a ideas creativas a través de lenguajes y librerias."
+    },
+    "TEAMPLAYER": {
+      "LABEL": "Jugador de Equipo",
+      "DESCRIPTION": "Combinando experiencia técnica con comunicación efectiva para obtener resultados efectivos."
+    },
+    "STRATEGY": {
+      "LABEL": "Mentalidad estratégica",
+      "DESCRIPTION": "Orientado a trabajar con un enfoque en los objetivos del producto."
+    }
+  },
+  "FORM": {
+    "SUBMIT": "Enviar",
+    "NAME": {
+      "LABEL": "Nombre",
+      "PLACEHOLDER": "Escribe tu nombre"
+    },
+    "MESSAGE": {
+      "LABEL": "Mensaje",
+      "PLACEHOLDER": "Escribe tu mensaje"
+    },
+    "EMAIL": {
+      "PLACEHOLDER": "Escribe tu email"
+    }
+  }
+}

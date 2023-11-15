@@ -1,10 +1,9 @@
 ---
+import { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 import { User } from "@nextui-org/react";
-
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 // Component Imports
 import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
@@ -12,18 +11,18 @@ import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
-
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
+import Slider from "../components/Slider.astro";
+import Footer from "../components/Footer.astro";
+
+changeLanguage("en");
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
   .slice(0, 4);
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <BaseLayout>
@@ -32,7 +31,7 @@ const projects = (await getCollection("work"))
       <header class="hero">
         <Hero
           title="Hello, my name is Rodrigo Juarez"
-          tagline="I am a Developer who is currently based in Posadas, Argentina."
+          tagline="I am a Full Stack Developer who is currently based in Misiones, Argentina. I specialize in technologies such as React, Angular, Node and Ruby On Rails."
           align="start"
         >
           <div class="roles">
@@ -41,28 +40,13 @@ const projects = (await getCollection("work"))
               <Icon icon="pencil-line" size="1.33em" /> Engineering Manager
             </Pill>
           </div>
-          <div>
-            <div class="flex gap-2">
-              {
-                [
-                  "React",
-                  "TypeScript",
-                  "Ruby On Rails",
-                  "Node",
-                  "ExpressJS",
-                ].map((name) => (
-                  <p class="skills-card font-bold px-1">{name}</p>
-                ))
-              }
-            </div>
-          </div>
         </Hero>
 
         <img
-          alt="Rodrigo Juarez smiling in a red plaid shirt and tortoise shell glasses"
+          alt="Rodrigo Juarez"
           width="480"
           height="620"
-          src="/assets/profile.jpeg"
+          src="/assets/perfil.webp"
         />
       </header>
 
@@ -70,34 +54,20 @@ const projects = (await getCollection("work"))
     </div>
 
     <main class="wrapper stack gap-20 lg:gap-48">
-      <section class="section with-background with-cta">
-        <header class="section-header stack gap-2 lg:gap-4">
-          <h3>My Work</h3>
-          <p>
-            Take a look below my featured work for clients from the past few
-            years.
-          </p>
-        </header>
-
-        <div class="gallery">
-          <Grid variant="offset">
-            {
-              projects.map((project) => (
-                <li>
-                  <PortfolioPreview project={project} />
-                </li>
-              ))
-            }
-          </Grid>
+      <section>
+        <div class="flex flex-col mb-[5rem] gap-2 lg:gap-4">
+          <h3 class="text-center text-[3.5rem]">My Work</h3>
+          <p class="text-center text-xl">Take a look at my previous works.</p>
         </div>
+        <Slider />
       </section>
 
       <section class="section with-background bg-variant">
         <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Mentions</h3>
+          <h3>Testimonials</h3>
           <p>
-            I have been fortunate enough to receive praise for my work in
-            several publications. Take a look below to learn more.
+            I have had the pleasure of meeting and working with many great
+            people in my journey in the tech world. These are some of them:
           </p>
         </header>
 
@@ -118,27 +88,27 @@ const projects = (await getCollection("work"))
                   comment:
                     "Rodrigo is a great developer. His desire to always learn something new is contagious and pushes you to improve your skills. He really loves what he does and it shows when you talk to him.",
                   position: "Full Stack Developer at Vita Wallet",
-                  img: "https://i.ibb.co/3CBmTQP/facundo.jpg",
-                  link: "https://www.linkedin.com/in/facundo-bettella-iunnissi-dev/",
+                  img: "https://media.licdn.com/dms/image/C4D03AQE3Dvbfje4z-A/profile-displayphoto-shrink_100_100/0/1622433907126?e=1704931200&v=beta&t=MJgKO2DRuFWZkLb_0zhie8IPHmileeUQ0zcJSw8Ae0Y",
+                  link: "https://www.linkedin.com/in/andresvelasqueztrujillo/",
                 },
                 {
-                  name: "Andres Trujillo",
+                  name: "Fernando Diaz",
                   comment:
                     "Rodrigo is a great developer. His desire to always learn something new is contagious and pushes you to improve your skills. He really loves what he does and it shows when you talk to him.",
                   position: "Full Stack Developer at Vita Wallet",
-                  img: "https://i.ibb.co/3CBmTQP/facundo.jpg",
+                  img: "https://media.licdn.com/dms/image/C4D03AQENZH2fpD0-PA/profile-displayphoto-shrink_100_100/0/1661154212068?e=1704931200&v=beta&t=2rVOyTzSh-CPPaxsJ80xdBwy_pya19ZEaV3wK9MhpCQ",
                   link: "https://www.linkedin.com/in/facundo-bettella-iunnissi-dev/",
                 },
                 {
-                  name: "Andres Trujillo",
+                  name: "Leandro Marco",
                   comment:
-                    "Rodrigo is a great developer. His desire to always learn something new is contagious and pushes you to improve your skills. He really loves what he does and it shows when you talk to him.",
+                    "I recommend Rodrigo as a great professional. His interpersonal skills are remarkable, it is very pleasant to have meetings with him due to his good energy.",
                   position: "Full Stack Developer at Vita Wallet",
-                  img: "https://i.ibb.co/3CBmTQP/facundo.jpg",
+                  img: "https://media.licdn.com/dms/image/C4D03AQEVhHbfsZXSaw/profile-displayphoto-shrink_100_100/0/1626141691035?e=1704931200&v=beta&t=1nI4Hx7P2_hfMK_2Guy57QQjtMyBdg8P_1PLlKowq4Q",
                   link: "https://www.linkedin.com/in/facundo-bettella-iunnissi-dev/",
                 },
               ].map(({ name, comment, position, img, link }) => (
-                <li class="mention-card flex flex-col gap-4 w-fit">
+                <li class="mention-card flex flex-col gap-4 w-fit h-min p-3">
                   <p>{comment}</p>
                   <div>
                     <a href={link} target="_blank">
@@ -162,6 +132,7 @@ const projects = (await getCollection("work"))
 
     <ContactCTA />
   </div>
+  <Footer />
 </BaseLayout>
 
 <style>
@@ -307,5 +278,4 @@ const projects = (await getCollection("work"))
       height: 10.5rem;
     }
   }
-
 </style>

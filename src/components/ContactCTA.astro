@@ -1,14 +1,23 @@
 ---
+import i18next, { t } from "i18next";
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
-	<CallToAction href="mailto:me@example.com">
-		Send Me a Message
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
+	<h2>{t("CONTACT.CALL")}</h2>
+  <div>
+    <CallToAction href={i18next.language === "es" ? `/es/contact` : `/contact`}>
+      {t("CONTACT.MESSAGE")}
+      <Icon icon="paper-plane-tilt" size="1.2em" />
+    </CallToAction>
+    <br>
+    <CallToAction href="https://drive.google.com/uc?id=11jEEsPSd-KgkNZgkdVCsUv9_eVUWYmP5&export=download">
+      {t("CONTACT.DOWNLOAD")}
+      <Icon icon="download" size="1.2em" />
+    </CallToAction>
+  </div>
+
 </aside>
 
 <style>

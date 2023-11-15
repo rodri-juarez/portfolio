@@ -1,0 +1,39 @@
+{
+  "CONTACT": {
+    "CALL": "Interested in working together?",
+    "DOWNLOAD": "Download my CV",
+    "MESSAGE": "Send Me a Message"
+  },
+  "NAV": {
+    "ABOUT": "About",
+    "HOME": "Home",
+    "CONTACT": "Contact"
+  },
+  "SKILLS": {
+    "FULLSTACK": {
+      "DESCRIPTION": "I enjoy bringing creative ideas to life through technologies and frameworks."
+    },
+    "TEAMPLAYER": {
+      "LABEL": "Team Player",
+      "DESCRIPTION": "Combining technical expertise with effective communication for effective results."
+    },
+    "STRATEGY": {
+      "LABEL": "Strategy-Minded",
+      "DESCRIPTION": "Blending technical prowess with a focus on business objectives."
+    }
+  },
+  "FORM": {
+    "SUBMIT": "Submit",
+    "NAME": {
+      "LABEL": "Name",
+      "PLACEHOLDER": "Write your name"
+    },
+    "MESSAGE": {
+      "LABEL": "Message",
+      "PLACEHOLDER": "Write your message"
+    },
+    "EMAIL": {
+      "PLACEHOLDER": "Write your email"
+    }
+  }
+}
