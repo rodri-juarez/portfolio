@@ -52,10 +52,10 @@ const projects = (await getCollection("work"))
       <Skills />
     </div>
 
-    <main class="wrapper stack gap-20 lg:gap-48">
+    <main class="wrapper stack gap-20 lg:gap-40">
       <section>
         <div class="flex flex-col mb-[5rem] gap-2 lg:gap-4">
-          <h3 class="text-center text-[3.5rem]">Mis trabajos</h3>
+          <h3 class="text-center title-header">Mis trabajos</h3>
           <p class="text-center text-xl">
             Echa un vistazo a mis anteriores trabajos.
           </p>
@@ -81,7 +81,7 @@ const projects = (await getCollection("work"))
                   name: "Facundo Bettella",
                   comment:
                     "Una de las cosas que más destaco de Rodrigo es que siempre dispuesto a ayudarte en lo que necesites. Programar con él me ayudó a tener mejores soft skills porque aprendes constantemente de su forma de ser.",
-                  position: "Full Stack Developer at EY",
+                  position: "Full Stack Developer en EY",
                   img: "https://i.ibb.co/3CBmTQP/facundo.jpg",
                   link: "https://www.linkedin.com/in/facundo-bettella-iunnissi-dev/",
                 },
@@ -89,7 +89,7 @@ const projects = (await getCollection("work"))
                   name: "Andres Trujillo",
                   comment:
                     "Rodrigo es un gran desarrollador. Su deseo de aprender siempre algo nuevo es contagioso y te empuja a mejorar tus habilidades. Realmente ama lo que hace y se nota cuando hablas con él.",
-                  position: "Full Stack Developer at Vita Wallet",
+                  position: "Full Stack Developer en Vita Wallet",
                   img: "https://media.licdn.com/dms/image/C4D03AQE3Dvbfje4z-A/profile-displayphoto-shrink_100_100/0/1622433907126?e=1704931200&v=beta&t=MJgKO2DRuFWZkLb_0zhie8IPHmileeUQ0zcJSw8Ae0Y",
                   link: "https://www.linkedin.com/in/andresvelasqueztrujillo/",
                 },
@@ -99,15 +99,15 @@ const projects = (await getCollection("work"))
                     "En mi paso por Wisboo, Rodrigo fue un excelente compañero y mentor. Siempre atento a todo lo que fuera necesario para cumplir las metas y tambien para mi desarrollo profesional",
                   position: "Front End Developer",
                   img: "https://media.licdn.com/dms/image/C4D03AQENZH2fpD0-PA/profile-displayphoto-shrink_100_100/0/1661154212068?e=1704931200&v=beta&t=2rVOyTzSh-CPPaxsJ80xdBwy_pya19ZEaV3wK9MhpCQ",
-                  link: "https://www.linkedin.com/in/facundo-bettella-iunnissi-dev/",
+                  link: "https://www.linkedin.com/in/fernandodiaz12/",
                 },
                 {
                   name: "Leandro Marco",
                   comment:
                     "Recomiendo a Rodrigo como un gran profesional. Sus habilidades interpersonales son destacables, es muy agradable tener reuniones con él debido a su buena energía.",
-                  position: "Tech Lead at Wisboo",
+                  position: "Tech Lead en Wisboo",
                   img: "https://media.licdn.com/dms/image/C4D03AQEVhHbfsZXSaw/profile-displayphoto-shrink_100_100/0/1626141691035?e=1704931200&v=beta&t=1nI4Hx7P2_hfMK_2Guy57QQjtMyBdg8P_1PLlKowq4Q",
-                  link: "https://www.linkedin.com/in/facundo-bettella-iunnissi-dev/",
+                  link: "https://www.linkedin.com/in/mmleandro/",
                 },
               ].map(({ name, comment, position, img, link }) => (
                 <li class="mention-card flex flex-col gap-4 p-8 justify-normal">
@@ -192,7 +192,6 @@ const projects = (await getCollection("work"))
       border-radius: 4.5rem;
       object-fit: cover;
     }
-
   }
 
   /* ====================================================== */
@@ -255,6 +254,10 @@ const projects = (await getCollection("work"))
 
     .section.with-cta {
       grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+    }
+
+    .title-header {
+      font-size: var(--text-4xl);
     }
 
     .section-header {
