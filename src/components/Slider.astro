@@ -1,5 +1,7 @@
 ---
 import Icon from "./Icon.astro";
+import { t } from "i18next";
+
 ---
 
 <swiper-container
@@ -24,7 +26,7 @@ import Icon from "./Icon.astro";
           class="mr-[12px] font-bold"
           href="https://ba-cars.vercel.app/"
           target="_blank"
-          aria-label="Ir al sitio">Ir al sitio</a
+          aria-label="Ir al sitio">{t("SLIDER.DEMO")}</a
         >
         <a class="mt-[4px]" href="https://ba-cars.vercel.app/" target="_blank">
           <div>
@@ -44,7 +46,7 @@ import Icon from "./Icon.astro";
           class="mr-[12px] font-bold"
           href="https://www.wisboo.com/"
           target="_blank"
-          aria-label="Ir al sitio">Ir al sitio</a
+          aria-label="Ir al sitio">{t("SLIDER.DEMO")}</a
         >
         <a class="mt-[4px]" href="https://www.wisboo.com/" target="_blank">
           <div>
@@ -64,7 +66,7 @@ import Icon from "./Icon.astro";
           class="mr-[12px] font-bold"
           href="https://rocketxchange.vercel.app"
           target="_blank"
-          aria-label="Ir al sitio">Ir al sitio</a
+          aria-label="Ir al sitio">{t("SLIDER.DEMO")}</a
         >
         <a
           class="mt-[4px]"
@@ -82,7 +84,7 @@ import Icon from "./Icon.astro";
     <img src="/assets/ecommerce.webp" width="400" height="200" alt="U21" />
     <div class="card flex flex-col bg-white pt-[1rem]">
       <p class="subtitle text-center sm:text-left sm:pl-4">Web</p>
-      <p class="pt-[1rem] font-bold text-3xl text-center sm:text-left sm:pl-4">U21 (proximamente)</p>
+      <p class="pt-[1rem] font-bold text-3xl text-center sm:text-left sm:pl-4">U21 <small>({t("SLIDER.INPROGRESS")})</small></p>
       <!--       <a class="pt-[1rem] flex flex-row" href="">
         <p class="mr-[12px] font-bold">View demo</p>
         <div class="mt-[5px]">

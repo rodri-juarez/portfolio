@@ -9,6 +9,10 @@
     "HOME": "Inicio",
     "CONTACT": "Contacto"
   },
+  "SLIDER": {
+    "DEMO": "Ir al sitio",
+    "INPROGRESS": "En Progreso"
+  },
   "SKILLS": {
     "FULLSTACK": {
       "DESCRIPTION": "Disfruto dando vida a ideas creativas a través de lenguajes y librerias."

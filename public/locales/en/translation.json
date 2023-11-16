@@ -9,6 +9,10 @@
     "HOME": "Home",
     "CONTACT": "Contact"
   },
+  "SLIDER": {
+    "DEMO": "View demo",
+    "INPROGRESS": "In Progress"
+  },
   "SKILLS": {
     "FULLSTACK": {
       "DESCRIPTION": "I enjoy bringing creative ideas to life through technologies and frameworks."
