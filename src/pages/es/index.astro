@@ -63,7 +63,6 @@ const projects = (await getCollection("work"))
         <Slider />
       </section>
 
-
       <section class="section with-background bg-variant">
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Testimonios</h3>
@@ -111,19 +110,24 @@ const projects = (await getCollection("work"))
                   link: "https://www.linkedin.com/in/facundo-bettella-iunnissi-dev/",
                 },
               ].map(({ name, comment, position, img, link }) => (
-                <li class="mention-card flex flex-col gap-4 w-fit p-2 justify-center">
-                  <p>{comment}</p>
-                  <div>
-                    <a href={link} target="_blank">
-                      <User
-                        client:visible
-                        name={name}
-                        description={position}
-                        avatarProps={{
-                          src: img,
-                        }}
-                      />
-                    </a>
+                <li class="mention-card flex flex-col gap-4 p-8 justify-normal">
+                  <p class="w-fit">
+                    <q>{comment}</q>
+                  </p>
+                  <div class="w-full flex flex-row justify-between">
+                    <User
+                      client:visible
+                      name={name}
+                      description={position}
+                      avatarProps={{
+                        src: img,
+                      }}
+                    />
+                    <div class="social">
+                      <a href={link} target="_blank">
+                        <Icon icon="linkedin-logo" size="30px" />
+                      </a>
+                    </div>
                   </div>
                 </li>
               ))
@@ -138,6 +142,18 @@ const projects = (await getCollection("work"))
 </BaseLayout>
 
 <style>
+  .social {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--accent-dark);
+    transition: color var(--theme-transition);
+  }
+
+  .social:hover,
+  .social:focus {
+    color: var(--accent-text-over);
+  }
   .hero {
     display: flex;
     flex-direction: column;
@@ -150,7 +166,7 @@ const projects = (await getCollection("work"))
   }
 
   .hero img {
-    aspect-ratio: 5 / 4;
+    aspect-ratio: auto;
     object-fit: cover;
     object-position: top;
     border-radius: 1.5rem;
@@ -176,6 +192,7 @@ const projects = (await getCollection("work"))
       border-radius: 4.5rem;
       object-fit: cover;
     }
+
   }
 
   /* ====================================================== */
@@ -211,6 +228,10 @@ const projects = (await getCollection("work"))
 
   .with-background.bg-variant::before {
     --hero-bg: var(--bg-image-subtle-1);
+  }
+
+  .title-header {
+    font-size: var(--text-2xl);
   }
 
   .section-header {
@@ -266,7 +287,6 @@ const projects = (await getCollection("work"))
     height: 14rem;
     justify-content: center;
     align-items: center;
-    text-align: center;
     border: 1px solid var(--gray-800);
     border-radius: 1.5rem;
     color: var(--gray-300);

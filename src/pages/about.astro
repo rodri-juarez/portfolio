@@ -81,7 +81,7 @@ changeLanguage("en");
           />
         </figure>
       </div>
-      <section>
+      <section class="mt-[2rem] sm:mt-0">
         <p>But in addition to traveling and programming I do things like:</p>
         <p>
           <strong>Trekking:</strong> It serves as an escape for me, a time to
@@ -94,6 +94,7 @@ changeLanguage("en");
         <p>
           I try to enjoy each day as I navigate the digital realm during the day
           and embrace the tranquility of nature whenever the opportunity arises.
+
 
           <strong
             >Life is a journey and I am grateful for every step along the way.
@@ -135,6 +136,20 @@ changeLanguage("en");
     color: var(--gray-0);
   }
 
+  .mention-card {
+    display: flex;
+    height: 4rem;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--gray-800);
+    border-radius: 1rem;
+    color: var(--gray-300);
+    background: var(--gradient-subtle);
+    box-shadow: var(--shadow-sm);
+  }
+
   .content {
     grid-column: 1 / 4;
   }
@@ -157,10 +172,8 @@ changeLanguage("en");
   }
 
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(6, 4vw);
-    grid-gap: 1rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .gallery__img {
@@ -237,6 +250,13 @@ changeLanguage("en");
   }
 
   @media (min-width: 50em) {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(6, 4vw);
+      grid-gap: 1rem;
+      align-content: center;
+    }
     .about {
       display: grid;
       grid-template-columns: 1fr 60% 1fr;
@@ -250,23 +270,7 @@ changeLanguage("en");
       display: contents;
       font-size: var(--text-lg);
     }
-  }
 
-  .mention-card {
-    display: flex;
-    height: 4rem;
-    width: auto;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid var(--gray-800);
-    border-radius: 1rem;
-    color: var(--gray-300);
-    background: var(--gradient-subtle);
-    box-shadow: var(--shadow-sm);
-  }
-
-  @media (min-width: 50em) {
     .mention-card {
       border-radius: 1rem;
       height: 3.5rem;

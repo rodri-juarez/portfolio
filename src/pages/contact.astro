@@ -11,10 +11,7 @@ import CallToAction from "../components/CallToAction.astro";
 changeLanguage("en");
 ---
 
-<BaseLayout
-  title="My Work | Rodrigo Juarez"
-  description="Lets get in touch!"
->
+<BaseLayout title="My Work | Rodrigo Juarez" description="Lets get in touch!">
   <div class="stack gap-20">
     <main class="wrapper stack about gap-20">
       <Hero
@@ -30,16 +27,23 @@ changeLanguage("en");
           </div>
           <CallToAction
             href="https://drive.google.com/uc?id=11jEEsPSd-KgkNZgkdVCsUv9_eVUWYmP5&export=download"
-            extraStyles="w-[20rem] h-[4rem]"
+            extraStyles="w-[20rem] h-[4rem] items-center"
           >
             {t("CONTACT.DOWNLOAD")}
             <Icon icon="download" size="1.2em" />
           </CallToAction>
         </div>
-        <ContactUs submit={t("FORM.SUBMIT")} name={t("FORM.NAME.LABEL")} message={t("FORM.MESSAGE.LABEL")} namePlaceholder={t("FORM.NAME.PLACEHOLDER")} messagePlaceholder={t("FORM.MESSAGE.PLACEHOLDER")} emailPlaceholder={t("FORM.EMAIL.PLACEHOLDER")} client:only />
+        <ContactUs
+          submit={t("FORM.SUBMIT")}
+          name={t("FORM.NAME.LABEL")}
+          message={t("FORM.MESSAGE.LABEL")}
+          namePlaceholder={t("FORM.NAME.PLACEHOLDER")}
+          messagePlaceholder={t("FORM.MESSAGE.PLACEHOLDER")}
+          emailPlaceholder={t("FORM.EMAIL.PLACEHOLDER")}
+          client:only
+        />
       </section>
     </main>
   </div>
   <Footer />
 </BaseLayout>
-
