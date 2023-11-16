@@ -15,12 +15,12 @@ import Icon from "./Icon.astro";
   class="h-[30rem] swiper-container"
 >
   <swiper-slide>
-    <img src="/assets/fondo.jpeg" width="400" height="200" />
+    <img src="/assets/carhub.webp" width="400" height="200" alt="CarHub" />
     <div class="card flex flex-col bg-white pl-4 pt-[1rem]">
       <p class="subtitle">Web</p>
-      <p class="pt-[1rem] font-bold text-3xl">Nombre del proyecto</p>
+      <p class="pt-[1rem] font-bold text-3xl">CarHub</p>
       <a class="pt-[1rem] flex flex-row" href="">
-        <p class="mr-[12px] font-bold">View demo</p>
+        <p class="mr-[12px] font-bold" aria-label="Ir al sitio">View demo</p>
         <div class="mt-[5px]">
           <Icon icon={"arrow-right"} />
         </div>
@@ -28,12 +28,12 @@ import Icon from "./Icon.astro";
     </div>
   </swiper-slide>
   <swiper-slide>
-    <img src="/assets/wisboo.png" width="400" height="3<<00" />
+    <img src="/assets/wisboo.webp" width="400" height="3<<00" alt="Wisboo"/>
     <div class="card flex flex-col bg-white pl-4 pt-[1rem]">
       <p class="subtitle">Web</p>
       <p class="pt-[1rem] font-bold text-3xl">Wisboo</p>
       <div class="pt-[1rem] flex flex-row">
-        <a class="mr-[12px] font-bold" href="https://www.wisboo.com/" target="_blank">Ir al sitio</a>
+        <a class="mr-[12px] font-bold" href="https://www.wisboo.com/" target="_blank" aria-label="Ir al sitio">Ir al sitio</a>
          <a class="mt-[4px]" href="https://www.wisboo.com/" target="_blank">
           <div >
             <Icon icon={"arrow-right"} />
@@ -42,30 +42,32 @@ import Icon from "./Icon.astro";
       </div>
     </div>
   </swiper-slide>
-  <swiper-slide>
-    <img src="/assets/fondo.jpeg" width="400" height="200" />
+    <swiper-slide>
+    <img src="/assets/rocket.webp" width="400" height="200" alt="Rocket"/>
     <div class="card flex flex-col bg-white pl-4 pt-[1rem]">
       <p class="subtitle">Web</p>
-      <p class="pt-[1rem] font-bold text-3xl">Nombre del proyecto</p>
-      <a class="pt-[1rem] flex flex-row" href="">
-        <p class="mr-[12px] font-bold">View demo</p>
-        <div class="mt-[5px]">
-          <Icon icon={"arrow-right"} />
-        </div>
-      </a>
+      <p class="pt-[1rem] font-bold text-3xl">Rocket</p>
+      <div class="pt-[1rem] flex flex-row">
+        <a class="mr-[12px] font-bold" href="https://rocketxchange.vercel.app" target="_blank" aria-label="Ir al sitio">Ir al sitio</a>
+         <a class="mt-[4px]" href="https://rocketxchange.vercel.app" target="_blank">
+          <div >
+            <Icon icon={"arrow-right"} />
+          </div>
+        </a>
+      </div>
     </div>
   </swiper-slide>
   <swiper-slide>
-    <img src="/assets/fondo.jpeg" width="400" height="200" />
+    <img src="/assets/ecommerce.webp" width="400" height="200" alt="U21" />
     <div class="card flex flex-col bg-white pl-4 pt-[1rem]">
       <p class="subtitle">Web</p>
-      <p class="pt-[1rem] font-bold text-3xl">Nombre del proyecto</p>
-      <a class="pt-[1rem] flex flex-row" href="">
+      <p class="pt-[1rem] font-bold text-3xl">U21 (proximamente)</p>
+<!--       <a class="pt-[1rem] flex flex-row" href="">
         <p class="mr-[12px] font-bold">View demo</p>
         <div class="mt-[5px]">
           <Icon icon={"arrow-right"} />
         </div>
-      </a>
+      </a> -->
     </div>
   </swiper-slide>
 </swiper-container>
