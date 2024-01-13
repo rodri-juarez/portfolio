@@ -77,18 +77,18 @@ const projects = (await getCollection("work"))
                 {
                   name: "Facundo Bettella",
                   comment:
-                    "One of the things that stands out most about Rodrigo is that he is always willing to help you with whatever you need. Programming with him helped me have better soft skills.",
+                    "Rodrigo's willingness to help is exceptional. Programming with him improved my soft skills.",
                   position: "Full Stack Developer at EY",
                   img: "https://i.ibb.co/3CBmTQP/facundo.jpg",
                   link: "https://www.linkedin.com/in/facundo-bettella-iunnissi-dev/",
                 },
                 {
-                  name: "Andres Trujillo",
+                  name: "Leandro Marco",
                   comment:
-                    "Rodrigo's contagious desire to learn pushes you to improve your skills. He loves his work, and it shows.",
-                  position: "Full Stack Developer at Vita Wallet",
-                  img: "https://media.licdn.com/dms/image/C4D03AQE3Dvbfje4z-A/profile-displayphoto-shrink_100_100/0/1622433907126?e=1704931200&v=beta&t=MJgKO2DRuFWZkLb_0zhie8IPHmileeUQ0zcJSw8Ae0Y",
-                  link: "https://www.linkedin.com/in/andresvelasqueztrujillo/",
+                    "I recommend Rodrigo as a great professional. His interpersonal skills are remarkable, it is very pleasant to have meetings with him due to his good energy.",
+                  position: "Tech Lead at Wisboo",
+                  img: "https://media.licdn.com/dms/image/C4D03AQEVhHbfsZXSaw/profile-displayphoto-shrink_100_100/0/1626141691035?e=1704931200&v=beta&t=1nI4Hx7P2_hfMK_2Guy57QQjtMyBdg8P_1PLlKowq4Q",
+                  link: "https://www.linkedin.com/in/mmleandro/",
                 },
                 {
                   name: "Fernando Diaz",
@@ -99,15 +99,15 @@ const projects = (await getCollection("work"))
                   link: "https://www.linkedin.com/in/fernandodiaz12/",
                 },
                 {
-                  name: "Leandro Marco",
+                  name: "Andres Trujillo",
                   comment:
-                    "I recommend Rodrigo as a great professional. His interpersonal skills are remarkable, it is very pleasant to have meetings with him due to his good energy.",
-                  position: "Tech Lead at Wisboo",
-                  img: "https://media.licdn.com/dms/image/C4D03AQEVhHbfsZXSaw/profile-displayphoto-shrink_100_100/0/1626141691035?e=1704931200&v=beta&t=1nI4Hx7P2_hfMK_2Guy57QQjtMyBdg8P_1PLlKowq4Q",
-                  link: "https://www.linkedin.com/in/mmleandro/",
+                    "Rodrigo's contagious desire to learn pushes you to improve your skills. He loves his work, and it shows.",
+                  position: "Full Stack Developer at Vita Wallet",
+                  img: "https://media.licdn.com/dms/image/C4D03AQE3Dvbfje4z-A/profile-displayphoto-shrink_100_100/0/1622433907126?e=1704931200&v=beta&t=MJgKO2DRuFWZkLb_0zhie8IPHmileeUQ0zcJSw8Ae0Y",
+                  link: "https://www.linkedin.com/in/andresvelasqueztrujillo/",
                 },
               ].map(({ name, comment, position, img, link }) => (
-                <li class="mention-card flex flex-col gap-4 p-8 justify-normal">
+                <li class="mention-card flex flex-col gap-4 p-8">
                   <p class="w-fit">
                     <q>{comment}</q>
                   </p>
@@ -120,7 +120,7 @@ const projects = (await getCollection("work"))
                         src: img,
                       }}
                     />
-                    <div class="social">
+                    <div class="social items-end">
                       <a href={link} target="_blank">
                         <Icon icon="linkedin-logo" size="30px" />
                       </a>
@@ -142,7 +142,6 @@ const projects = (await getCollection("work"))
 <style>
   .social {
     display: flex;
-    align-items: end;
     text-decoration: none;
     color: var(--accent-dark);
     transition: color var(--theme-transition);
