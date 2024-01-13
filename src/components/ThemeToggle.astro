@@ -73,9 +73,11 @@ import Icon from "./Icon.astro";
       super();
 
       const button = this.querySelector("button")!;
+      let darkMode = localStorage.getItem("dark-mode");
 
       /** Set the theme to dark/light mode. */
       const setTheme = (dark: boolean) => {
+        localStorage.setItem("dark-mode", dark ? "enabled" : "disabled");
         document.documentElement.classList[dark ? "add" : "remove"](
           "theme-dark"
         );
@@ -88,6 +90,9 @@ import Icon from "./Icon.astro";
 
       // Toggle the theme when a user clicks the button.
       button.addEventListener("click", () => setTheme(!this.isDark()));
+
+      document.addEventListener('astro:before-swap', () => {
+        setTheme(darkMode === "enabled")})
 
       // Initialize button state to reflect current theme.
       setTheme(this.isDark());
