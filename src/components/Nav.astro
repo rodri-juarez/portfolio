@@ -84,7 +84,7 @@ const iconLinks: {
               ]}
               href={href}
             >
-              {label}
+            <span class={`${Astro.url.pathname !== href && 'hidden'} pr-1`}>&lt; </span>{label}<span class={`${Astro.url.pathname !== href && 'hidden'} pl-1`}>/&gt;</span>
             </a>
           </li>
         ))
