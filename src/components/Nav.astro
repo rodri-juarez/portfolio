@@ -15,7 +15,7 @@ const textLinks: { label: string; href: string }[] = [
   {
     label: t("NAV.CONTACT"),
     href: i18next.language === "es" ? `/es/contact` : `/contact`,
-  }
+  },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -40,22 +40,21 @@ const iconLinks: {
     icon: "twitter-logo",
   },
 ];
-
 ---
 
 <nav>
   <div class="menu-header">
-    <a href=`${i18next.language === "es" ? "/es" : "/"}` class="site-title align-middle	">
+    <a
+      href=`${i18next.language === "es" ? "/es" : "/"}`
+      class="site-title align-middle"
+    >
       <Icon
         icon="terminal-window"
         color="var(--accent-regular)"
         size="1.6em"
         gradient
       />
-      <p class="flex ">
-
-        Rodrigo Juarez
-      </p>
+      <p class="flex">Rodrigo Juarez</p>
     </a>
     <menu-button>
       <template>
@@ -84,7 +83,7 @@ const iconLinks: {
               ]}
               href={href}
             >
-            <span class={`${Astro.url.pathname !== href && 'hidden'} pr-1`}>&lt; </span>{label}<span class={`${Astro.url.pathname !== href && 'hidden'} pl-1`}>/&gt;</span>
+              {label}
             </a>
           </li>
         ))
@@ -123,7 +122,27 @@ const iconLinks: {
               ]}
               href={href}
             >
-             <span class={`${Astro.url.pathname !== href && 'hidden'} pr-1`}>&lt; </span>{label}<span class={`${Astro.url.pathname !== href && 'hidden'} pl-1`}>/&gt;</span>
+              <span
+                class={`${
+                 !(Astro.url.pathname === href ||
+                    (href !== (i18next.language === "es" ? "/es" : "/") &&
+                      Astro.url.pathname.startsWith(href))) &&
+                  "hidden"
+                } pr-1`}
+              >
+                &lt;{" "}
+              </span>
+              {label}
+              <span
+                class={`${
+                  !(Astro.url.pathname === href ||
+                    (href !== (i18next.language === "es" ? "/es" : "/") &&
+                      Astro.url.pathname.startsWith(href))) &&
+                  "hidden"
+                } pl-1`}
+              >
+                /&gt;
+              </span>
             </a>
           </li>
         ))
