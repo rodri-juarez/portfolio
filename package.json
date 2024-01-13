@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.1",
-    "@astrojs/react": "^3.0.4",
-    "@astrojs/tailwind": "^5.0.2",
-    "@astrojs/vercel": "^5.1.0",
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/react": "^3.0.9",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^6.1.4",
     "@emailjs/browser": "^3.11.0",
     "@nextui-org/react": "^2.2.2",
     "@sendgrid/mail": "^7.7.0",
@@ -21,7 +21,7 @@
     "@types/react-dom": "^18.2.14",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.3",
-    "astro": "^3.4.3",
+    "astro": "^4.1.2",
     "astro-i18next": "^1.0.0-beta.21",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
