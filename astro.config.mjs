@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel/serverless';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), astroI18next()],
-  output: 'server',
+  output: 'hybrid',
   adapter: vercel({
     webAnalytics: {
       enabled: true,
@@ -17,4 +17,9 @@ export default defineConfig({
       enabled: true,
     }
   }),
+  vite: {
+    define: {
+      'import.meta.env.PUBLIC_VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
+    },
+  },
 });
