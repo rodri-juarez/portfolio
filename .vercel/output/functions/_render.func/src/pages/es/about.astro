@@ -1,0 +1,265 @@
+---
+import { changeLanguage } from "i18next";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import Hero from "../../components/Hero.astro";
+import Footer from "../../components/Footer.astro";
+
+changeLanguage("es");
+---
+
+<BaseLayout
+  title="About | Rodrigo Juarez"
+  description="About Rodrigo Juarez Lorem Ipsum"
+>
+  <div class="stack">
+    <main transition:animate="slide" class="wrapper about">
+      <Hero
+        title="Mi historia"
+        tagline="Cordobes. Feliz ². Codigo, fútbol y trekking."
+      >
+        <img
+          width="w-full"
+          height="auto"
+          src="/assets/fondo.jpeg"
+          alt="Rodrigo Juarez"
+        />
+      </Hero>
+
+      <section class="w-full">
+        <div class="content">
+          <p>
+            Antes de adentrarme al mundo tech trabaje varios años en el rubro de la construcción,
+            la satisfacción de construir algo nuevo por mi cuenta fue lo que me llamó la atención de la programación y lo que conectó mi anterior oficio con el actual.
+            Nunca deja de fascinarme la variedad de soluciones a un mismo problema que existen pero a la vez la importancia de ser pragmático a la hora de buscar resolverlo.
+          </p>
+          <p>
+            ¡Una de mis pasiones es viajar! Conocer nuevos lugares, culturas y personas ha enriquecido mi vida y me ha ayudado a entender
+            la importancia de abordar cada situación desde diferentes perspectivas.
+          </p>
+        </div>
+      </section>
+    </main>
+    <div class="wrapper container">
+      <div class="gallery">
+        <figure class="gallery__item gallery__item--1">
+          <img
+            src="/assets/londres.webp"
+            alt="Londres"
+            class="gallery__img"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <img
+            src="/assets/amsterdam.webp"
+            alt="Amsterdam"
+            class="gallery__img"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--3">
+          <img
+            src="/assets/mendoza.webp"
+            alt="Mendoza"
+            class="gallery__img"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--4">
+          <img
+            src="/assets/team.webp"
+            alt="Team Wisboo"
+            class="gallery__img"
+          />
+        </figure>
+      </div>
+      <section class="mt-[2rem] sm:mt-0">
+        <p>
+          Pero además de viajar y programar hago cosas como:
+        </p>
+        <p>
+          <strong>Trekking:</strong> me sirve como escape, un momento para recargar energías y apreciar las maravillas del aire libre.
+        </p>
+        <p>
+          <strong>Futbol:</strong> me gusta practicar deporte y disfruto de mirar un buen partido entre amigos.
+        </p>
+        <p>
+          Trato de disfrutar cada día mientras navego por el ámbito digital durante el día y abrazo la tranquilidad de la naturaleza cada vez que surge la oportunidad.
+          <strong>La vida es un viaje y estoy agradecido por cada paso en el camino.</strong>
+        </p>
+      </section>
+    </div>
+    <ContactCTA />
+  </div>
+  <Footer />
+</BaseLayout>
+
+<style>
+  p {
+    margin-bottom: 0.5rem;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .mention-card {
+    display: flex;
+    height: 4rem;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--gray-800);
+    border-radius: 1rem;
+    color: var(--gray-300);
+    background: var(--gradient-subtle);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .content {
+    grid-column: 1 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  .container {
+    width: 100%;
+    margin: 2rem auto;
+    margin-bottom: 5rem;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    /** Alternative Syntax **/
+    /* grid-column: 1 / span 2;  */
+    /* grid-row: 1 / span 2; */
+  }
+
+  .gallery__item--2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    /** Alternative Syntax **/
+    /* grid-column: 3 / span 2;  */
+    /* grid-row: 1 / span 2; */
+  }
+
+  .gallery__item--3 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+
+    /** Alternative Syntax **/
+    /* grid-column: 5 / span 4;
+  grid-row: 1 / span 5; */
+  }
+
+  .gallery__item--4 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+
+    /** Alternative Syntax **/
+    /* grid-column: 1 / span 4;  */
+    /* grid-row: 3 / span 3; */
+  }
+
+  .gallery__item--5 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
+
+    /** Alternative Syntax **/
+    /* grid-column: 1 / span 4; */
+    /* grid-row: 6 / span 3; */
+  }
+
+  .gallery__item--6 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 9;
+
+    /** Alternative Syntax **/
+    /* grid-column: 5 / span 4; */
+    /* grid-row: 6 / span 3; */
+  }
+
+  @media (min-width: 50em) {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(6, 4vw);
+      grid-gap: 1rem;
+      align-content: center;
+    }
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+
+    .mention-card {
+      border-radius: 1rem;
+      height: 3.5rem;
+      width: auto;
+    }
+  }
+</style>

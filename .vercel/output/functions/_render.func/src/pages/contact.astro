@@ -1,0 +1,49 @@
+---
+import { changeLanguage } from "i18next";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import { ContactUs } from "../components/ContactUS";
+import Footer from "../components/Footer.astro";
+import Icon from "../components/Icon.astro";
+import { t } from "i18next";
+import CallToAction from "../components/CallToAction.astro";
+
+changeLanguage("en");
+---
+
+<BaseLayout title="My Work | Rodrigo Juarez" description="Lets get in touch!">
+  <div class="stack gap-20">
+    <main transition:animate="slide" class="wrapper stack about gap-20">
+      <Hero
+        title="Lets get in touch!"
+        tagline="Drop me a line and I will get back to you as soon as possible."
+        align="center"
+      />
+      <section class="flex flex-col gap-10 lg:flex-row">
+        <div class="flex flex-col w-[50%] h-auto gap-10">
+          <div class="flex flex-col gap-2">
+            <label for="mail">Email</label>
+            <p id="mail" class="text-2xl">juarezr100@gmail.com</p>
+          </div>
+          <CallToAction
+            href="https://drive.google.com/uc?id=1QcJeyPQMJxSIhpLuMb8zBlrVu1-KkPpm&export=download"
+            extraStyles="w-[20rem] h-[4rem] items-center"
+          >
+            {t("CONTACT.DOWNLOAD")}
+            <Icon icon="download" size="1.2em" />
+          </CallToAction>
+        </div>
+        <ContactUs
+          submit={t("FORM.SUBMIT")}
+          name={t("FORM.NAME.LABEL")}
+          message={t("FORM.MESSAGE.LABEL")}
+          namePlaceholder={t("FORM.NAME.PLACEHOLDER")}
+          messagePlaceholder={t("FORM.MESSAGE.PLACEHOLDER")}
+          emailPlaceholder={t("FORM.EMAIL.PLACEHOLDER")}
+          client:only
+        />
+      </section>
+    </main>
+  </div>
+  <Footer />
+</BaseLayout>
